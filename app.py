@@ -42,8 +42,8 @@ from linebot.models import (
 app = Flask(__name__)
 
 # get channel_secret and channel_access_token from your environment variable
-channel_secret = 'a24d560ab56cdcc350076c0632011118'
-channel_access_token = 'Rw/xL6sxpfuscJE1k2941JrhyVfqT/IeYQqx2SWUroNLL1SJOQe9poDlA2YUqOTH2VW52tEPz/S8fkf3TxR4/sIgMsxdtNz8vIGWGZqWtrKZ2poCT+dtkmZrLDwEd8WtRr1UOn1Q1t+qiRSein9SPQdB04t89/1O/w1cDnyilFU='
+channel_secret = '3efe01ed52954fb3bec61bd569cfe0b2'
+channel_access_token = '+c8m4h9/dUQyP3GDlcK4ixgWQiWmr3+X9RUg7H9Zf4LDlKmjlL7tFTaZJHje26+22VW52tEPz/S8fkf3TxR4/sIgMsxdtNz8vIGWGZqWtrIdWqxc/6eAVrYhkx+GX5Nj6RK7S2HCeGVYTT09yg6KfgdB04t89/1O/w1cDnyilFU='
 if channel_secret is None:
     print('Specify LINE_CHANNEL_SECRET as environment variable.')
     sys.exit(1)
@@ -164,8 +164,8 @@ def handle_text_message(event):
     else:
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=event.message.text))
-        line_bot_api.reply_message(
-            event.reply_token, TextSendMessage(text=str(event.message.text) + " : TEST"))
+    line_bot_api.reply_message(
+        event.reply_token, TextSendMessage(text=str(event.message.text) + " : TEST"))
 
 
 @handler.add(MessageEvent, message=LocationMessage)

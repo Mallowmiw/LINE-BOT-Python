@@ -1,0 +1,7 @@
+line-bot-sdk
+Flask
+gunicorn
+itsdangerous
+Jinja
+MarkupSafe
+Werkzeug

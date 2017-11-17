@@ -70,7 +70,7 @@ def make_static_tmp_dir():
 def pushtest():
 	try:
     	line_bot_api.push_message('<to>', TextSendMessage(text='Hello World!'))
-	except LineBotApiError as e: lin
+	except LineBotApiError as e: 
 
 @app.route('/', methods=['POST'])
 @app.route("/callback", methods=['POST'])
@@ -95,7 +95,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
     text = event.message.text
-
+	pushtest()
     if text == 'profile':
         if isinstance(event.source, SourceUser):
             profile = line_bot_api.get_profile(event.source.user_id)

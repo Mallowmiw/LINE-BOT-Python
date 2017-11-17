@@ -85,9 +85,10 @@ def callback():
 
     return 'OK'
 			
-@handler.add(MessageEvent, message=TextMessage)
+@handler.add(FollowEvent)
 def push():
 	line_bot_api.push_message(to, TextSendMessage(text='Hello World!'))
+@handler.add(MessageEvent, message=TextMessage)	
 def handle_text_message(event):
     text = event.message.text
 

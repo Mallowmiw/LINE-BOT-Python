@@ -57,6 +57,7 @@ handler = WebhookHandler(channel_secret)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 
 
+
 # function for create tmp dir for download content
 def make_static_tmp_dir():
     try:
@@ -66,6 +67,10 @@ def make_static_tmp_dir():
             pass
         else:
             raise
+def pushtest():
+	try:
+    	line_bot_api.push_message('<to>', TextSendMessage(text='Hello World!'))
+	except LineBotApiError as e: lin
 
 @app.route('/', methods=['POST'])
 @app.route("/callback", methods=['POST'])
@@ -84,6 +89,7 @@ def callback():
         abort(400)
 
     return 'OK'
+
 
 
 @handler.add(MessageEvent, message=TextMessage)

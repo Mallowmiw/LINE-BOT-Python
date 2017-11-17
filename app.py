@@ -84,8 +84,6 @@ def callback():
         abort(400)
 
     return 'OK'
-
-
 			
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
@@ -164,7 +162,7 @@ def handle_text_message(event):
         pass
     else:
         line_bot_api.reply_message(
-            event.reply_token, TextSendMessage(text="สวัสดีจ้า"))
+            event.reply_token, TextSendMessage(text="Test bot"+event.message.text))
 
 
 @handler.add(MessageEvent, message=LocationMessage)

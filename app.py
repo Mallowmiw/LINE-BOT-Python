@@ -163,7 +163,7 @@ def handle_text_message(event):
         pass
     else:
         line_bot_api.reply_message(
-            event.reply_token, TextSendMessage(text=" : EE"))
+            event.reply_token, TextSendMessage(text="สวัสดีจ้า"))
 
 
 @handler.add(MessageEvent, message=LocationMessage)

@@ -88,6 +88,11 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
     text = event.message.text
+	 line_bot_api.push_message('Ue0ef5aaa0bb984e7310fac545c068250', 
+                    TextSendMessage(
+                        text='Display name: Hello I am push'
+                    )
+            )
 
     if text == 'profile':
         if isinstance(event.source, SourceUser):
